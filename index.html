@@ -105,9 +105,8 @@ h4.panel__title { font-size: 14px; }
 .viz__table tr.is-broken td { color: var(--text-3); background: #f3f4f6; }
 .panel__plot .band-lbl { fill: var(--text-2); font-weight: 600; font-size: 11px; }
 
-.cols { display: grid; grid-template-columns: 1fr; gap: 0; }
-.col { min-width: 0; padding-top: 18px; margin-top: 18px; border-top: 1px solid var(--border); }
-.col .list { max-width: 90ch; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding-top: 18px; border-top: 1px solid var(--border); }
+.col { min-width: 0; }
 .col__title { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin: 0 0 10px; font-weight: 700; }
 .list { margin: 0; padding-left: 20px; }
 .list > li { margin-bottom: 12px; color: var(--text); text-wrap: pretty; font-size: 15.5px; }
@@ -122,6 +121,7 @@ h4.panel__title { font-size: 14px; }
 
 @media (max-width: 760px) {
   .viz__panels { grid-template-columns: 1fr; }
+  .cols { grid-template-columns: 1fr; gap: 18px; }
 
   .panel__plot { height: 230px; }
 }
