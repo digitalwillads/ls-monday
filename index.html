@@ -18,6 +18,7 @@
   --text-3: #6b7280;
   --accent: #2a78d6;
   --series: #2a78d6;
+  --series-2: #eb6834;
   --series-soft: rgba(42, 120, 214, 0.12);
   --grid: #e5e7eb;
   --axis: #9ca3af;
@@ -51,7 +52,16 @@ h1 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.0
 .brand__headline { font-size: clamp(22px, 2.8vw, 30px); font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; margin: 0 0 22px; text-wrap: balance; }
 .brand__note { margin: -10px 0 22px; color: var(--text-2); max-width: 70ch; text-wrap: pretty; }
 
-.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 22px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 18px; }
+.tiles-group { margin-bottom: 4px; }
+.tiles__label { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); font-weight: 700; margin: 0 0 8px; }
+.tiles__empty { margin: 0 0 18px; color: var(--text-3); font-size: 14px; }
+.legend { font-weight: 500; color: var(--text-3); font-size: 12px; margin-left: 10px; white-space: nowrap; }
+.key { display: inline-block; vertical-align: middle; margin: 0 5px 0 8px; }
+.key--rect { width: 10px; height: 10px; border-radius: 2px; }
+.key--line { width: 16px; height: 2px; border-radius: 1px; }
+.key--1 { background: var(--series); }
+.key--2 { background: var(--series-2); }
 .tile { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; min-width: 0; }
 .tile__label { font-size: 13px; color: var(--text-3); font-weight: 600; margin-bottom: 6px; }
 .tile__value { font-size: clamp(30px, 3.6vw, 40px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
@@ -74,7 +84,7 @@ h1 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.0
 .panel__plot .ref-lbl { fill: var(--ref); font-weight: 600; font-size: 11px; }
 .panel__plot .hit { fill: transparent; cursor: default; }
 .panel__plot .hit:focus { outline: none; }
-.panel__plot .hit:focus + .bar, .panel__plot .bar.is-hot { fill: #1c5cab; }
+.panel__plot .bar.is-hot { filter: brightness(0.82); }
 .tip {
   position: absolute; pointer-events: none; background: var(--text); color: #fff; border-radius: 8px; padding: 8px 10px;
   font-size: 12px; line-height: 1.35; white-space: nowrap; transform: translate(-50%, calc(-100% - 10px)); opacity: 0; transition: opacity .12s;
@@ -125,183 +135,183 @@ h1 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.0
   <header class="top">
     <p class="eyebrow">Ingersoll Rand Life Sciences &middot; Google Ads</p>
     <h1>Week of September 6 to 12, 2026</h1>
-    <p class="lede">Five accounts. Form leads only, counted Sunday to Saturday. Google Ads only. Microsoft Ads is noted where a number is on record.</p>
+    <p class="lede">Five accounts, Google Ads and Microsoft Ads. Form leads only, counted Sunday to Saturday.</p>
     <p class="lede lede--note">One change for all five: the shared form action now counts once per click instead of every submission. It landed between September 11 and 13. Every week on this page ran on the old count. From next week the numbers read lower for the same activity.</p>
     <ul class="nav"><li><a href="#welch">Welch Vacuum</a></li><li><a href="#thomas">Thomas</a></li><li><a href="#adi">Air Dimensions</a></li><li><a href="#ilc-dover">ILC Dover</a></li><li><a href="#flexan">Flexan</a></li></ul>
   </header>
   
 <section class="brand" id="welch" aria-labelledby="welch-h">
   <div class="brand__head">
-    <p class="eyebrow">Welch Vacuum &middot; Google Ads &middot; September 6 to 12</p>
-    <h2 class="brand__headline" id="welch-h">56 form leads at $211 each, the most since the week of August 9.</h2>
+    <p class="eyebrow">Welch Vacuum &middot; Google and Microsoft Ads &middot; September 6 to 12</p>
+    <h2 class="brand__headline" id="welch-h">56 form leads on Google at $211 each, the most since the week of August 9. Microsoft added 13 at $121.</h2>
     
   </div>
-  <div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$11,861</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+13% <span class="tile__prior">vs prior week $10,468</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">56.1</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▲</span>+18% <span class="tile__prior">vs prior week 47.5</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$211</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▼</span>−4% <span class="tile__prior">vs prior week $221</span></div></div></div>
+  <div class="tiles-group"><div class="tiles__label">Google Ads</div><div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$11,861</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+13% <span class="tile__prior">vs prior week $10,468</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">56.1</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▲</span>+18% <span class="tile__prior">vs prior week 47.5</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$211</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▼</span>−4% <span class="tile__prior">vs prior week $221</span></div></div></div></div><div class="tiles-group"><div class="tiles__label">Microsoft Ads</div><div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$1,570</div><div class="tile__delta tile__delta--neutral">flat vs prior week $1,570</div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">13</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▼</span>−28% <span class="tile__prior">vs prior week 18</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$121</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▲</span>+38% <span class="tile__prior">vs prior week $87</span></div></div></div></div>
   <figure class="viz" data-slug="welch">
     <div class="viz__panels">
       <div class="panel" data-kind="forms">
-        <h3 class="panel__title">Form leads per week</h3>
+        <h3 class="panel__title">Form leads per week <span class="legend"><span class="key key--rect key--1"></span>Google <span class="key key--rect key--2"></span>Microsoft</span></h3>
         <div class="panel__plot"></div>
       </div>
       <div class="panel" data-kind="cpf">
-        <h3 class="panel__title">Cost per form per week</h3>
+        <h3 class="panel__title">Cost per form per week <span class="legend"><span class="key key--line key--1"></span>Google <span class="key key--line key--2"></span>Microsoft</span></h3>
         <div class="panel__plot"></div>
       </div>
     </div>
     <figcaption class="viz__caption">
-      <span>Four weeks, Sunday to Saturday, Aug 16 to Sep 6. Forms = GAds_form_sent_all.</span>
+      <span>Four weeks, Sunday to Saturday, Aug 16 to Sep 6. Forms = Google GAds_form_sent_all, Microsoft Bing_form_sent_all.</span>
       <button type="button" class="viz__toggle" aria-expanded="false">Show table</button>
     </figcaption>
     <div class="viz__table" hidden>
       <table>
-        <thead><tr><th>Week</th><th>Spend</th><th>Form leads</th><th>Cost per form</th></tr></thead>
-        <tbody><tr><td>August 16 to 22</td><td>$11,010</td><td>51.6</td><td>$213</td></tr><tr><td>August 23 to 29</td><td>$10,843</td><td>47.1</td><td>$230</td></tr><tr><td>August 30 to September 5</td><td>$10,468</td><td>47.5</td><td>$221</td></tr><tr><td>September 6 to 12</td><td>$11,861</td><td>56.1</td><td>$211</td></tr></tbody>
+        <thead><tr><th>Week</th><th>Google spend</th><th>Google forms</th><th>Google per form</th><th>Microsoft spend</th><th>Microsoft forms</th><th>Microsoft per form</th></tr></thead>
+        <tbody><tr><td>August 16 to 22</td><td>$11,010</td><td>51.6</td><td>$213</td><td>$1,603</td><td>19</td><td>$84</td></tr><tr><td>August 23 to 29</td><td>$10,843</td><td>47.1</td><td>$230</td><td>$1,481</td><td>12</td><td>$123</td></tr><tr><td>August 30 to September 5</td><td>$10,468</td><td>47.5</td><td>$221</td><td>$1,570</td><td>18</td><td>$87</td></tr><tr><td>September 6 to 12</td><td>$11,861</td><td>56.1</td><td>$211</td><td>$1,570</td><td>13</td><td>$121</td></tr></tbody>
       </table>
     </div>
-    <script type="application/json" class="viz__data">{"weeks": ["Aug 16", "Aug 23", "Aug 30", "Sep 6"], "ranges": ["August 16 to 22", "August 23 to 29", "August 30 to September 5", "September 6 to 12"], "spend": [11009.615823, 10842.500407000001, 10468.476806, 11860.771893], "forms": [51.6, 47.1, 47.5, 56.1], "cpf": [213.43383586768525, 230.1986036281677, 220.51080948763314, 211.49995749769465], "target_cpf": null, "broken": [false, false, false, false]}</script>
+    <script type="application/json" class="viz__data">{"weeks": ["Aug 16", "Aug 23", "Aug 30", "Sep 6"], "ranges": ["August 16 to 22", "August 23 to 29", "August 30 to September 5", "September 6 to 12"], "series": [{"name": "Google", "spend": [11009.615823, 10842.500407000001, 10468.476806, 11860.771893], "forms": [51.6, 47.1, 47.5, 56.1], "cpf": [213.43383586768525, 230.1986036281677, 220.51080948763314, 211.49995749769465]}, {"name": "Microsoft", "spend": [1602.5500000000002, 1480.62, 1569.7700000000002, 1569.9399999999998], "forms": [19.0, 12.0, 18.0, 13.0], "cpf": [84.34473684210528, 123.38499999999999, 87.20944444444446, 120.76461538461537]}], "target_cpf": null, "broken": [false, false, false, false]}</script>
   </figure>
   <div class="cols">
-    <div class="col"><h3 class="col__title">What we did</h3><ul class="list"><li><span class="item__head">Monthly Google budget set at $45,000 (September 11)</span><ul><li>Microsoft separate at $6,000 a month.</li><li>Brand North America $260 to $310 a day. Brand DACH $35 to $50. The two cheapest sources of forms.</li><li>Performance Max $200 to $75. Competitor North America $75 to $40. APAC Non-Brand $75 to $40. The three most expensive.</li></ul></li><li><span class="item__head">Forms followed the budget</span><ul><li>Brand North America: 8 to 13.8 forms.</li><li>Non-Brand DACH: 1 to 5.</li><li>Non-Brand EMEIA: 3 to 6.5.</li></ul></li><li><span class="item__head">Negative keyword conflicts fixed (September 11)</span><ul><li>26 negatives removed. They blocked our own brand and competitor keywords.</li><li>Five cryogenic ad groups and 13 keywords with no forms paused.</li></ul></li><li><span class="item__head">30-day search-term audit (September 11), negatives added (September 13)</span><ul><li>About 10% of visible spend went to unrelated searches.</li><li>166 negatives added after a review: 124 to the account-wide list, 42 to the Non-Brand campaigns. Eight proposed terms were dropped because Welch sells those products.</li><li>Brand and competitor names (welch, gardner denver, ilmvac, duoseal, varian, millipore) now route out of Non-Brand to the Brand and Competitor campaigns, where they cost less.</li><li>Four keywords added so those searches have a home: varian vacuum pump, millipore vacuum pump, gardner denver vakuumpumpe, welsh vacuum.</li></ul></li><li><span class="item__head">Merchant Center access granted (September 11)</span></li></ul></div>
+    <div class="col"><h3 class="col__title">What we did</h3><ul class="list"><li><span class="item__head">Monthly Google budget set at $45,000 (September 11)</span><ul><li>Microsoft separate at $6,000 a month. Its daily budgets were held on September 10.</li><li>Brand North America $260 to $310 a day. Brand DACH $35 to $50. The two cheapest sources of forms.</li><li>Performance Max $200 to $75. Competitor North America $75 to $40. APAC Non-Brand $75 to $40. The three most expensive.</li></ul></li><li><span class="item__head">Forms followed the budget</span><ul><li>Brand North America: 8 to 13.8 forms.</li><li>Non-Brand DACH: 1 to 5.</li><li>Non-Brand EMEIA: 3 to 6.5.</li></ul></li><li><span class="item__head">Negative keyword conflicts fixed (September 11)</span><ul><li>26 negatives removed. They blocked our own brand and competitor keywords.</li><li>Five cryogenic ad groups and 13 keywords with no forms paused.</li></ul></li><li><span class="item__head">30-day search-term audit (September 11), negatives added (September 13)</span><ul><li>About 10% of visible spend went to unrelated searches.</li><li>166 negatives added after a review: 124 to the account-wide list, 42 to the Non-Brand campaigns. Eight proposed terms were dropped because Welch sells those products.</li><li>Brand and competitor names (welch, gardner denver, ilmvac, duoseal, varian, millipore) now route out of Non-Brand to the Brand and Competitor campaigns, where they cost less.</li><li>Four keywords added so those searches have a home: varian vacuum pump, millipore vacuum pump, gardner denver vakuumpumpe, welsh vacuum.</li></ul></li><li><span class="item__head">Merchant Center access granted (September 11)</span></li></ul></div>
     <div class="col"><h3 class="col__title">What is next</h3><ul class="list"><li><span class="item__head">Hold $45,000 a month</span><ul><li>September lands near $46,500. The cuts came on the 11th.</li><li>October is the first full month at the cap.</li></ul></li><li><span class="item__head">Cost per form: $210 toward $175</span><ul><li>30-day number, read every Friday.</li></ul></li><li><span class="item__head">Search terms, next step (September 15)</span><ul><li>Broad “vacuum pump” to phrase match. It spent $972 in 30 days, $487 of it on unrelated searches.</li><li>First read of the new negatives: junk share and brand routing.</li></ul></li><li><span class="item__head">Webshop review and Merchant Center feed work this week</span><ul><li>The shop recorded 75 checkouts and 1 purchase in 30 days. That gap comes first.</li></ul></li><li><span class="item__head">Remarketing</span><ul><li>A remarketing proposal for every Life Sciences brand (Google Display or Meta) goes to the September 17 meeting.</li><li>The search remarketing campaign live since September 3 ($15 a day) has no results yet.</li></ul></li><li><span class="item__head">Counting</span><ul><li>The form action now counts once per click. The change landed between September 11 and 13. Weekly form counts read lower from here for the same activity, up to about a third.</li><li>Microsoft form counts get reconciled against Salesforce before the Tuesday call.</li></ul></li></ul></div>
   </div>
 </section>
 <section class="brand" id="thomas" aria-labelledby="thomas-h">
   <div class="brand__head">
-    <p class="eyebrow">Thomas &middot; Google Ads &middot; September 6 to 12</p>
-    <h2 class="brand__headline" id="thomas-h">55 form leads at $72 each, under the $80 target.</h2>
+    <p class="eyebrow">Thomas &middot; Google and Microsoft Ads &middot; September 6 to 12</p>
+    <h2 class="brand__headline" id="thomas-h">55 form leads on Google at $72 each, under the $80 target. Microsoft, in its first full week, added 4 at $95.</h2>
     
   </div>
-  <div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$3,978</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+15% <span class="tile__prior">vs prior week $3,466</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">55.2</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▲</span>+25% <span class="tile__prior">vs prior week 44.3</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$72</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▼</span>−8% <span class="tile__prior">vs prior week $78</span></div></div></div>
+  <div class="tiles-group"><div class="tiles__label">Google Ads</div><div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$3,978</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+15% <span class="tile__prior">vs prior week $3,466</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">55.2</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▲</span>+25% <span class="tile__prior">vs prior week 44.3</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$72</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▼</span>−8% <span class="tile__prior">vs prior week $78</span></div></div></div></div><div class="tiles-group"><div class="tiles__label">Microsoft Ads</div><div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$381</div><div class="tile__delta tile__delta--neutral">first full week</div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">4</div><div class="tile__delta tile__delta--neutral">first full week</div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$95</div><div class="tile__delta tile__delta--neutral">first full week</div></div></div></div>
   <figure class="viz" data-slug="thomas">
     <div class="viz__panels">
       <div class="panel" data-kind="forms">
-        <h3 class="panel__title">Form leads per week</h3>
+        <h3 class="panel__title">Form leads per week <span class="legend"><span class="key key--rect key--1"></span>Google <span class="key key--rect key--2"></span>Microsoft</span></h3>
         <div class="panel__plot"></div>
       </div>
       <div class="panel" data-kind="cpf">
-        <h3 class="panel__title">Cost per form per week</h3>
+        <h3 class="panel__title">Cost per form per week <span class="legend"><span class="key key--line key--1"></span>Google <span class="key key--line key--2"></span>Microsoft</span></h3>
         <div class="panel__plot"></div>
       </div>
     </div>
     <figcaption class="viz__caption">
-      <span>Four weeks, Sunday to Saturday, Aug 16 to Sep 6. Forms = GAds_form_sent_all.</span>
+      <span>Four weeks, Sunday to Saturday, Aug 16 to Sep 6. Forms = Google GAds_form_sent_all, Microsoft Bing_form_sent_all.</span>
       <button type="button" class="viz__toggle" aria-expanded="false">Show table</button>
     </figcaption>
     <div class="viz__table" hidden>
       <table>
-        <thead><tr><th>Week</th><th>Spend</th><th>Form leads</th><th>Cost per form</th></tr></thead>
-        <tbody><tr><td>August 16 to 22</td><td>$3,705</td><td>51.6</td><td>$72</td></tr><tr><td>August 23 to 29</td><td>$3,270</td><td>54.7</td><td>$60</td></tr><tr><td>August 30 to September 5</td><td>$3,466</td><td>44.3</td><td>$78</td></tr><tr><td>September 6 to 12</td><td>$3,978</td><td>55.2</td><td>$72</td></tr></tbody>
+        <thead><tr><th>Week</th><th>Google spend</th><th>Google forms</th><th>Google per form</th><th>Microsoft spend</th><th>Microsoft forms</th><th>Microsoft per form</th></tr></thead>
+        <tbody><tr><td>August 16 to 22</td><td>$3,705</td><td>51.6</td><td>$72</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>August 23 to 29</td><td>$3,270</td><td>54.7</td><td>$60</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>August 30 to September 5</td><td>$3,466</td><td>44.3</td><td>$78</td><td>$18</td><td>0</td><td>n/a</td></tr><tr><td>September 6 to 12</td><td>$3,978</td><td>55.2</td><td>$72</td><td>$381</td><td>4</td><td>$95</td></tr></tbody>
       </table>
     </div>
-    <script type="application/json" class="viz__data">{"weeks": ["Aug 16", "Aug 23", "Aug 30", "Sep 6"], "ranges": ["August 16 to 22", "August 23 to 29", "August 30 to September 5", "September 6 to 12"], "spend": [3705.488464, 3270.121759, 3466.487462, 3977.898549], "forms": [51.6, 54.7, 44.3, 55.2], "cpf": [71.8435604364046, 59.73842265892286, 78.27862417904812, 72.11893460756127], "target_cpf": 80, "broken": [false, false, false, false]}</script>
+    <script type="application/json" class="viz__data">{"weeks": ["Aug 16", "Aug 23", "Aug 30", "Sep 6"], "ranges": ["August 16 to 22", "August 23 to 29", "August 30 to September 5", "September 6 to 12"], "series": [{"name": "Google", "spend": [3705.488464, 3270.121759, 3466.487462, 3977.898549], "forms": [51.6, 54.7, 44.3, 55.2], "cpf": [71.8435604364046, 59.73842265892286, 78.27862417904812, 72.11893460756127]}, {"name": "Microsoft", "spend": [null, null, 17.77, 380.52], "forms": [null, null, 0.0, 4.0], "cpf": [null, null, null, 95.13]}], "target_cpf": 80, "broken": [false, false, false, false]}</script>
   </figure>
   <div class="cols">
-    <div class="col"><h3 class="col__title">What we did</h3><ul class="list"><li><span class="item__head">Target cost per lead set at $80 (September 11)</span><ul><li>First budget step the same day: $84 a day more across six campaigns.</li><li>North America Non-Brand $90 to $120. North America Brand $60 to $75.</li><li>India Brand and Competitor, EU English Brand and Non-Brand also up.</li></ul></li><li><span class="item__head">Account work, September 8 to 11</span><ul><li>About 40 competitor names added as phrase negatives in six campaigns.</li><li>Ad-group targets set on 20 ad groups.</li><li>Two brand keywords with no forms paused. Clinical Diagnostics ads rewritten.</li></ul></li><li><span class="item__head">Ads and landing pages</span><ul><li>All 156 enabled ads approved. The August 3 audit found 48 disapproved.</li><li>Japan and Korea ads land on the Japanese and Korean pages.</li></ul></li><li><span class="item__head">Microsoft Ads</span><ul><li>Live since September 2 at $75 a day.</li><li>The second Eloqua ID is still open.</li></ul></li></ul></div>
+    <div class="col"><h3 class="col__title">What we did</h3><ul class="list"><li><span class="item__head">Target cost per lead set at $80 (September 11)</span><ul><li>First budget step the same day: $84 a day more across six campaigns.</li><li>North America Non-Brand $90 to $120. North America Brand $60 to $75.</li><li>India Brand and Competitor, EU English Brand and Non-Brand also up.</li></ul></li><li><span class="item__head">Account work, September 8 to 11</span><ul><li>About 40 competitor names added as phrase negatives in six campaigns.</li><li>Ad-group targets set on 20 ad groups.</li><li>Two brand keywords with no forms paused. Clinical Diagnostics ads rewritten.</li></ul></li><li><span class="item__head">Ads and landing pages</span><ul><li>All 156 enabled ads approved. The August 3 audit found 48 disapproved.</li><li>Japan and Korea ads land on the Japanese and Korean pages.</li></ul></li><li><span class="item__head">Microsoft Ads</span><ul><li>Live since September 2 at $75 a day. First full week: $381, 4 forms at $95.</li><li>The second Eloqua ID is still open.</li></ul></li></ul></div>
     <div class="col"><h3 class="col__title">What is next</h3><ul class="list"><li><span class="item__head">Budget step read (September 18)</span><ul><li>Forms and cost per lead for September 12 to 18 against $80.</li><li>If it holds, step two.</li></ul></li><li><span class="item__head">Negative keywords (decision September 15)</span><ul><li>209 from the September 11 audit and 424 from the automated review overlap. One decision.</li><li>Other companies’ names are 62% of the waste.</li></ul></li><li><span class="item__head">Clinical Diagnostics (September 18)</span><ul><li>$30 a day since August 31. $408 spent, no forms.</li><li>Three-week read: fix or pause.</li></ul></li><li><span class="item__head">Remarketing</span><ul><li>A remarketing proposal for every Life Sciences brand (Google Display or Meta) goes to the September 17 meeting.</li></ul></li><li><span class="item__head">Counting</span><ul><li>The form action now counts once per click. The change landed between September 11 and 13. Weekly form counts read lower from here for the same activity, so the $80 target gets re-read on the new basis.</li></ul></li></ul></div>
   </div>
 </section>
 <section class="brand" id="adi" aria-labelledby="adi-h">
   <div class="brand__head">
-    <p class="eyebrow">Air Dimensions &middot; Google Ads &middot; September 6 to 12</p>
-    <h2 class="brand__headline" id="adi-h">19 form leads at $187 each. Brand US fell from 7 to 3 forms.</h2>
+    <p class="eyebrow">Air Dimensions &middot; Google and Microsoft Ads &middot; September 6 to 12</p>
+    <h2 class="brand__headline" id="adi-h">19 form leads on Google at $187 each. Brand US fell from 7 to 3 forms. Microsoft: 1 form on $321.</h2>
     
   </div>
-  <div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$3,628</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+16% <span class="tile__prior">vs prior week $3,120</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">19.4</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▼</span>−16% <span class="tile__prior">vs prior week 23.1</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$187</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▲</span>+38% <span class="tile__prior">vs prior week $135</span></div></div></div>
+  <div class="tiles-group"><div class="tiles__label">Google Ads</div><div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$3,628</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+16% <span class="tile__prior">vs prior week $3,120</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">19.4</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▼</span>−16% <span class="tile__prior">vs prior week 23.1</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$187</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▲</span>+38% <span class="tile__prior">vs prior week $135</span></div></div></div></div><div class="tiles-group"><div class="tiles__label">Microsoft Ads</div><div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$321</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▼</span>−24% <span class="tile__prior">vs prior week $421</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">1</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▼</span>−67% <span class="tile__prior">vs prior week 3</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$321</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▲</span>+129% <span class="tile__prior">vs prior week $140</span></div></div></div></div>
   <figure class="viz" data-slug="adi">
     <div class="viz__panels">
       <div class="panel" data-kind="forms">
-        <h3 class="panel__title">Form leads per week</h3>
+        <h3 class="panel__title">Form leads per week <span class="legend"><span class="key key--rect key--1"></span>Google <span class="key key--rect key--2"></span>Microsoft</span></h3>
         <div class="panel__plot"></div>
       </div>
       <div class="panel" data-kind="cpf">
-        <h3 class="panel__title">Cost per form per week</h3>
+        <h3 class="panel__title">Cost per form per week <span class="legend"><span class="key key--line key--1"></span>Google <span class="key key--line key--2"></span>Microsoft</span></h3>
         <div class="panel__plot"></div>
       </div>
     </div>
     <figcaption class="viz__caption">
-      <span>Four weeks, Sunday to Saturday, Aug 16 to Sep 6. Forms = GAds_form_sent_all. Gray weeks: tracking was broken.</span>
+      <span>Four weeks, Sunday to Saturday, Aug 16 to Sep 6. Forms = Google GAds_form_sent_all, Microsoft Bing_form_sent_all. Gray weeks: Google tracking was broken.</span>
       <button type="button" class="viz__toggle" aria-expanded="false">Show table</button>
     </figcaption>
     <div class="viz__table" hidden>
       <table>
-        <thead><tr><th>Week</th><th>Spend</th><th>Form leads</th><th>Cost per form</th></tr></thead>
-        <tbody><tr class="is-broken"><td>August 16 to 22 (tracking was broken)</td><td>$3,747</td><td>30.6</td><td>$122</td></tr><tr class="is-broken"><td>August 23 to 29 (tracking was broken)</td><td>$3,478</td><td>28.6</td><td>$121</td></tr><tr><td>August 30 to September 5</td><td>$3,120</td><td>23.1</td><td>$135</td></tr><tr><td>September 6 to 12</td><td>$3,628</td><td>19.4</td><td>$187</td></tr></tbody>
+        <thead><tr><th>Week</th><th>Google spend</th><th>Google forms</th><th>Google per form</th><th>Microsoft spend</th><th>Microsoft forms</th><th>Microsoft per form</th></tr></thead>
+        <tbody><tr class="is-broken"><td>August 16 to 22 (tracking was broken)</td><td>$3,747</td><td>30.6</td><td>$122</td><td>$545</td><td>7</td><td>$78</td></tr><tr class="is-broken"><td>August 23 to 29 (tracking was broken)</td><td>$3,478</td><td>28.6</td><td>$121</td><td>$490</td><td>4</td><td>$123</td></tr><tr><td>August 30 to September 5</td><td>$3,120</td><td>23.1</td><td>$135</td><td>$421</td><td>3</td><td>$140</td></tr><tr><td>September 6 to 12</td><td>$3,628</td><td>19.4</td><td>$187</td><td>$321</td><td>1</td><td>$321</td></tr></tbody>
       </table>
     </div>
-    <script type="application/json" class="viz__data">{"weeks": ["Aug 16", "Aug 23", "Aug 30", "Sep 6"], "ranges": ["August 16 to 22", "August 23 to 29", "August 30 to September 5", "September 6 to 12"], "spend": [3746.819831999999, 3477.9809990000003, 3120.022601, 3627.5972200000006], "forms": [30.6, 28.6, 23.1, 19.4], "cpf": [122.46449076427234, 121.44965583954648, 135.20161257088554, 186.98811127687733], "target_cpf": null, "broken": [true, true, false, false]}</script>
+    <script type="application/json" class="viz__data">{"weeks": ["Aug 16", "Aug 23", "Aug 30", "Sep 6"], "ranges": ["August 16 to 22", "August 23 to 29", "August 30 to September 5", "September 6 to 12"], "series": [{"name": "Google", "spend": [3746.819831999999, 3477.9809990000003, 3120.022601, 3627.5972200000006], "forms": [30.6, 28.6, 23.1, 19.4], "cpf": [122.46449076427234, 121.44965583954648, 135.20161257088554, 186.98811127687733]}, {"name": "Microsoft", "spend": [544.5600000000001, 490.39, 420.66999999999996, 320.96], "forms": [7.0, 4.0, 3.0, 1.0], "cpf": [77.79428571428572, 122.5975, 140.22333333333333, 320.96]}], "target_cpf": null, "broken": [true, true, false, false]}</script>
   </figure>
   <div class="cols">
-    <div class="col"><h3 class="col__title">What we did</h3><ul class="list"><li><span class="item__head">Budget up $100 a day (September 11)</span><ul><li>US $228 to $268, after a $20 move to Brazil. Europe $97.50 to $117.50. Canada $35 to $55.</li><li>The month holds at $15,000.</li></ul></li><li><span class="item__head">Two new campaigns live</span><ul><li>Webshop since August 31 at $20 a day.</li><li>Brazil since September 1. $40 a day since September 11.</li></ul></li><li><span class="item__head">Targets (September 11)</span><ul><li>US $195 and Europe $190, up $10 each. Spanish up $10.</li><li>Ad-group targets set on three ad groups.</li></ul></li><li><span class="item__head">30-day search-term audit (September 11), fixes pushed (September 13)</span><ul><li>53% of visible spend went to unrelated searches.</li><li>Broad “CEMS pump” in Europe ($684, 4 of its 6 forms from other companies’ names) is now phrase match.</li><li>Brand US: “air diaphragm” negatives added after $352 on air-operated pump searches.</li><li>137 negatives added across the search campaigns, plus a new 50-term list on the Webshop campaign. Six proposed terms were dropped because ADI sells those products.</li><li>The Ingersoll Rand brands exclusion list is back on the US campaign. “High pressure pumps” and “chemical pump” keywords paused.</li></ul></li></ul></div>
-    <div class="col"><h3 class="col__title">What is next</h3><ul class="list"><li><span class="item__head">Webshop. We suggest:</span><ul><li>ADI-specific keywords. Every visible search was consumer kits, no forms.</li></ul></li><li><span class="item__head">Merchant Center access for the webshop</span><ul><li>Shopping ads are the way to send buyers to the webshop. They need edit access to the Air Dimensions Merchant Center. We do not have it yet.</li><li>Welch got its access on September 11. Air Dimensions is next. Corrie is arranging it.</li></ul></li><li><span class="item__head">Remarketing</span><ul><li>A remarketing proposal for every Life Sciences brand (Google Display or Meta) goes to the September 17 meeting.</li></ul></li></ul></div>
+    <div class="col"><h3 class="col__title">What we did</h3><ul class="list"><li><span class="item__head">Budget up $100 a day (September 11)</span><ul><li>US $228 to $268, after a $20 move to Brazil. Europe $97.50 to $117.50. Canada $35 to $55.</li><li>The month holds at $15,000.</li></ul></li><li><span class="item__head">Two new campaigns live</span><ul><li>Webshop since August 31 at $20 a day.</li><li>Brazil since September 1. $40 a day since September 11.</li></ul></li><li><span class="item__head">Targets (September 11)</span><ul><li>US $195 and Europe $190, up $10 each. Spanish up $10.</li><li>Ad-group targets set on three ad groups.</li></ul></li><li><span class="item__head">30-day search-term audit (September 11), fixes pushed (September 13)</span><ul><li>53% of visible spend went to unrelated searches.</li><li>Broad “CEMS pump” in Europe ($684, 4 of its 6 forms from other companies’ names) is now phrase match.</li><li>Brand US: “air diaphragm” negatives added after $352 on air-operated pump searches.</li><li>137 negatives added across the search campaigns, plus a new 50-term list on the Webshop campaign. Six proposed terms were dropped because ADI sells those products.</li><li>The Ingersoll Rand brands exclusion list is back on the US campaign. “High pressure pumps” and “chemical pump” keywords paused.</li></ul></li><li><span class="item__head">Microsoft Ads</span><ul><li>Daily budgets held on September 10. This week $321 and 1 form; the four weeks before averaged 5 forms a week.</li></ul></li></ul></div>
+    <div class="col"><h3 class="col__title">What is next</h3><ul class="list"><li><span class="item__head">Search terms, first read (September 18)</span><ul><li>Europe forms and junk share after the CEMS change and the 137 negatives.</li></ul></li><li><span class="item__head">Microsoft Ads</span><ul><li>One form on $321 this week. We read one more week before any change.</li></ul></li><li><span class="item__head">Webshop. We suggest:</span><ul><li>ADI-specific keywords. Every visible search was consumer kits, no forms.</li></ul></li><li><span class="item__head">Merchant Center access for the webshop</span><ul><li>Shopping ads are the way to send buyers to the webshop. They need edit access to the Air Dimensions Merchant Center. We do not have it yet.</li><li>Welch got its access on September 11. Air Dimensions is next. Corrie is arranging it.</li></ul></li><li><span class="item__head">Remarketing</span><ul><li>A remarketing proposal for every Life Sciences brand (Google Display or Meta) goes to the September 17 meeting.</li></ul></li></ul></div>
   </div>
 </section>
 <section class="brand" id="ilc-dover" aria-labelledby="ilc-dover-h">
   <div class="brand__head">
-    <p class="eyebrow">ILC Dover &middot; Google Ads &middot; September 6 to 12</p>
-    <h2 class="brand__headline" id="ilc-dover-h">10 form leads. Brand and WFI Performance Max produced 8.5 of them for $993.</h2>
+    <p class="eyebrow">ILC Dover &middot; Google and Microsoft Ads &middot; September 6 to 12</p>
+    <h2 class="brand__headline" id="ilc-dover-h">10 form leads on Google. Brand and WFI Performance Max produced 8.5 of them for $993. Microsoft: 1 form on $957.</h2>
     
   </div>
-  <div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$5,416</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+2% <span class="tile__prior">vs prior week $5,323</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">10</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▲</span>+11% <span class="tile__prior">vs prior week 9</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$542</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▼</span>−9% <span class="tile__prior">vs prior week $592</span></div></div></div>
+  <div class="tiles-group"><div class="tiles__label">Google Ads</div><div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$5,416</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+2% <span class="tile__prior">vs prior week $5,323</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">10</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▲</span>+11% <span class="tile__prior">vs prior week 9</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$542</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▼</span>−9% <span class="tile__prior">vs prior week $592</span></div></div></div></div><div class="tiles-group"><div class="tiles__label">Microsoft Ads</div><div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$957</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+76% <span class="tile__prior">vs prior week $543</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">1</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▼</span>−67% <span class="tile__prior">vs prior week 3</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$957</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▲</span>+429% <span class="tile__prior">vs prior week $181</span></div></div></div></div>
   <figure class="viz" data-slug="ilc-dover">
     <div class="viz__panels">
       <div class="panel" data-kind="forms">
-        <h3 class="panel__title">Form leads per week</h3>
+        <h3 class="panel__title">Form leads per week <span class="legend"><span class="key key--rect key--1"></span>Google <span class="key key--rect key--2"></span>Microsoft</span></h3>
         <div class="panel__plot"></div>
       </div>
       <div class="panel" data-kind="cpf">
-        <h3 class="panel__title">Cost per form per week</h3>
+        <h3 class="panel__title">Cost per form per week <span class="legend"><span class="key key--line key--1"></span>Google <span class="key key--line key--2"></span>Microsoft</span></h3>
         <div class="panel__plot"></div>
       </div>
     </div>
     <figcaption class="viz__caption">
-      <span>Four weeks, Sunday to Saturday, Aug 16 to Sep 6. Forms = GAds_form_sent_wg + GAds_form_sent_amt.</span>
+      <span>Four weeks, Sunday to Saturday, Aug 16 to Sep 6. Forms = Google GAds_form_sent_wg + GAds_form_sent_amt, Microsoft Bing_form_sent_wg + Bing_form_sent_amt.</span>
       <button type="button" class="viz__toggle" aria-expanded="false">Show table</button>
     </figcaption>
     <div class="viz__table" hidden>
       <table>
-        <thead><tr><th>Week</th><th>Spend</th><th>Form leads</th><th>Cost per form</th></tr></thead>
-        <tbody><tr><td>August 16 to 22</td><td>$2,396</td><td>9</td><td>$266</td></tr><tr><td>August 23 to 29</td><td>$3,636</td><td>12</td><td>$304</td></tr><tr><td>August 30 to September 5</td><td>$5,323</td><td>9</td><td>$592</td></tr><tr><td>September 6 to 12</td><td>$5,416</td><td>10</td><td>$542</td></tr></tbody>
+        <thead><tr><th>Week</th><th>Google spend</th><th>Google forms</th><th>Google per form</th><th>Microsoft spend</th><th>Microsoft forms</th><th>Microsoft per form</th></tr></thead>
+        <tbody><tr><td>August 16 to 22</td><td>$2,396</td><td>9</td><td>$266</td><td>$374</td><td>1</td><td>$374</td></tr><tr><td>August 23 to 29</td><td>$3,636</td><td>12</td><td>$304</td><td>$373</td><td>4</td><td>$93</td></tr><tr><td>August 30 to September 5</td><td>$5,323</td><td>9</td><td>$592</td><td>$543</td><td>3</td><td>$181</td></tr><tr><td>September 6 to 12</td><td>$5,416</td><td>10</td><td>$542</td><td>$957</td><td>1</td><td>$957</td></tr></tbody>
       </table>
     </div>
-    <script type="application/json" class="viz__data">{"weeks": ["Aug 16", "Aug 23", "Aug 30", "Sep 6"], "ranges": ["August 16 to 22", "August 23 to 29", "August 30 to September 5", "September 6 to 12"], "spend": [2395.5226509999998, 3635.6947370000003, 5322.907740000001, 5416.302663], "forms": [9.0, 12.0, 9.0, 10.0], "cpf": [266.1691834444444, 303.616000821068, 592.1524742846407, 541.649169856028], "target_cpf": null, "broken": [false, false, false, false]}</script>
+    <script type="application/json" class="viz__data">{"weeks": ["Aug 16", "Aug 23", "Aug 30", "Sep 6"], "ranges": ["August 16 to 22", "August 23 to 29", "August 30 to September 5", "September 6 to 12"], "series": [{"name": "Google", "spend": [2395.5226509999998, 3635.6947370000003, 5322.907740000001, 5416.302663], "forms": [9.0, 12.0, 9.0, 10.0], "cpf": [266.1691834444444, 303.616000821068, 592.1524742846407, 541.649169856028]}, {"name": "Microsoft", "spend": [373.87000000000006, 372.82, 543.16, 957.08], "forms": [1.0, 4.0, 3.0, 1.0], "cpf": [373.87000000000006, 93.205, 181.0533333333333, 957.08]}], "target_cpf": null, "broken": [false, false, false, false]}</script>
   </figure>
   <div class="cols">
-    <div class="col"><h3 class="col__title">What we did</h3><ul class="list"><li><span class="item__head">WFI Search split (September 11, as approved)</span><ul><li>WFI Search keeps the trade terms (wfi, water for injection, usp water) at $100 a day.</li><li>WFI Broad takes sterile water and SWFI at $40 a day. 60-day test, judged on orders.</li></ul></li><li><span class="item__head">WFI 10% promotion (September 1 to 30)</span><ul><li>Live in Google and Microsoft ads since September 4.</li></ul></li><li><span class="item__head">Merchant Center access granted (September 11)</span><ul><li>The promotion goes into Merchant Center next.</li><li>The product group gets checked for water only.</li></ul></li><li><span class="item__head">Brand campaign, live since August 13</span><ul><li>5.5 forms this week at $123 each.</li></ul></li><li><span class="item__head">Microsoft Ads</span><ul><li>About $121 a day, approved September 10.</li></ul></li></ul></div>
-    <div class="col"><h3 class="col__title">What is next</h3><ul class="list"><li><span class="item__head">Zero-form campaigns</span><ul><li>13 campaigns spent $3,757 this week with no form.</li><li>Aseptic alone: $801 at $17 a click. We suggest a cost-per-click cap.</li><li>We suggest a review of each against its goal at the Thursday meeting.</li></ul></li><li><span class="item__head">Microsite tracking</span><ul><li>Aligned to the conversion sheet by September 14, so IR Solutions leads count.</li></ul></li><li><span class="item__head">Remarketing</span><ul><li>A remarketing proposal for every Life Sciences brand (Google Display or Meta) goes to the September 17 meeting.</li></ul></li><li><span class="item__head">Budget</span><ul><li>September pace is about $23,000 on Google.</li><li>The monthly cap needs to be confirmed in writing.</li></ul></li></ul></div>
+    <div class="col"><h3 class="col__title">What we did</h3><ul class="list"><li><span class="item__head">WFI Search split (September 11, as approved)</span><ul><li>WFI Search keeps the trade terms (wfi, water for injection, usp water) at $100 a day.</li><li>WFI Broad takes sterile water and SWFI at $40 a day. 60-day test, judged on orders.</li></ul></li><li><span class="item__head">WFI 10% promotion (September 1 to 30)</span><ul><li>Live in Google and Microsoft ads since September 4.</li></ul></li><li><span class="item__head">Merchant Center access granted (September 11)</span><ul><li>The promotion goes into Merchant Center next.</li><li>The product group gets checked for water only.</li></ul></li><li><span class="item__head">Brand campaign, live since August 13</span><ul><li>5.5 forms this week at $123 each.</li></ul></li><li><span class="item__head">Microsoft Ads</span><ul><li>About $121 a day, approved September 10. This week $957 and 1 form, against $543 and 3 forms the week before.</li></ul></li></ul></div>
+    <div class="col"><h3 class="col__title">What is next</h3><ul class="list"><li><span class="item__head">Zero-form campaigns</span><ul><li>13 campaigns spent $3,757 this week with no form.</li><li>Aseptic alone: $801 at $17 a click. We suggest a cost-per-click cap.</li><li>We suggest a review of each against its goal at the Thursday meeting.</li></ul></li><li><span class="item__head">Microsoft Ads, week two at $121 a day</span><ul><li>The first week at the new budget bought clicks, not forms. We read week two before any change.</li></ul></li><li><span class="item__head">Microsite tracking</span><ul><li>Aligned to the conversion sheet by September 14, so IR Solutions leads count.</li></ul></li><li><span class="item__head">Remarketing</span><ul><li>A remarketing proposal for every Life Sciences brand (Google Display or Meta) goes to the September 17 meeting.</li></ul></li><li><span class="item__head">Budget</span><ul><li>September pace is about $23,000 on Google.</li><li>The monthly cap needs to be confirmed in writing.</li></ul></li></ul></div>
   </div>
 </section>
 <section class="brand" id="flexan" aria-labelledby="flexan-h">
   <div class="brand__head">
-    <p class="eyebrow">Flexan &middot; Google Ads &middot; September 6 to 12</p>
-    <h2 class="brand__headline" id="flexan-h">4 leads at $375 on $1,501. The rebuilt Generic campaign is one week old.</h2>
+    <p class="eyebrow">Flexan &middot; Google and Microsoft Ads &middot; September 6 to 12</p>
+    <h2 class="brand__headline" id="flexan-h">4 leads on Google at $375 and 2 on Microsoft at $236. The rebuilt Generic campaign is one week old.</h2>
     <p class="brand__note">The 15 to 16 leads a week in early July came from AI Max matching. It was switched off on July 28 because about three in four of those leads were off target.</p>
   </div>
-  <div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$1,501</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+34% <span class="tile__prior">vs prior week $1,124</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">4</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▼</span>−43% <span class="tile__prior">vs prior week 7</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$375</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▲</span>+134% <span class="tile__prior">vs prior week $161</span></div></div></div>
+  <div class="tiles-group"><div class="tiles__label">Google Ads</div><div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$1,501</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+34% <span class="tile__prior">vs prior week $1,124</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">4</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▼</span>−43% <span class="tile__prior">vs prior week 7</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$375</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▲</span>+134% <span class="tile__prior">vs prior week $161</span></div></div></div></div><div class="tiles-group"><div class="tiles__label">Microsoft Ads</div><div class="tiles"><div class="tile"><div class="tile__label">Spend</div><div class="tile__value">$471</div><div class="tile__delta tile__delta--neutral"><span class="tile__arrow" aria-hidden="true">▲</span>+149% <span class="tile__prior">vs prior week $189</span></div></div><div class="tile"><div class="tile__label">Form leads</div><div class="tile__value">2</div><div class="tile__delta tile__delta--good"><span class="tile__arrow" aria-hidden="true">▲</span>+100% <span class="tile__prior">vs prior week 1</span></div></div><div class="tile"><div class="tile__label">Cost per form</div><div class="tile__value">$235</div><div class="tile__delta tile__delta--bad"><span class="tile__arrow" aria-hidden="true">▲</span>+25% <span class="tile__prior">vs prior week $189</span></div></div></div></div>
   <figure class="viz" data-slug="flexan">
     <div class="viz__panels">
       <div class="panel" data-kind="forms">
-        <h3 class="panel__title">Form leads per week</h3>
+        <h3 class="panel__title">Form leads per week <span class="legend"><span class="key key--rect key--1"></span>Google <span class="key key--rect key--2"></span>Microsoft</span></h3>
         <div class="panel__plot"></div>
       </div>
       <div class="panel" data-kind="cpf">
-        <h3 class="panel__title">Cost per form per week</h3>
+        <h3 class="panel__title">Cost per form per week <span class="legend"><span class="key key--line key--1"></span>Google <span class="key key--line key--2"></span>Microsoft</span></h3>
         <div class="panel__plot"></div>
       </div>
     </div>
     <figcaption class="viz__caption">
-      <span>Four weeks, Sunday to Saturday, Aug 16 to Sep 6. Forms = GAds_form_sent_wg.</span>
+      <span>Four weeks, Sunday to Saturday, Aug 16 to Sep 6. Forms = Google GAds_form_sent_wg, Microsoft Bing_form_sent_wg.</span>
       <button type="button" class="viz__toggle" aria-expanded="false">Show table</button>
     </figcaption>
     <div class="viz__table" hidden>
       <table>
-        <thead><tr><th>Week</th><th>Spend</th><th>Form leads</th><th>Cost per form</th></tr></thead>
-        <tbody><tr><td>August 16 to 22</td><td>$1,286</td><td>1</td><td>$1,272</td></tr><tr><td>August 23 to 29</td><td>$990</td><td>4</td><td>$248</td></tr><tr><td>August 30 to September 5</td><td>$1,124</td><td>7</td><td>$161</td></tr><tr><td>September 6 to 12</td><td>$1,501</td><td>4</td><td>$375</td></tr></tbody>
+        <thead><tr><th>Week</th><th>Google spend</th><th>Google forms</th><th>Google per form</th><th>Microsoft spend</th><th>Microsoft forms</th><th>Microsoft per form</th></tr></thead>
+        <tbody><tr><td>August 16 to 22</td><td>$1,286</td><td>1</td><td>$1,272</td><td>$173</td><td>4</td><td>$43</td></tr><tr><td>August 23 to 29</td><td>$990</td><td>4</td><td>$248</td><td>$197</td><td>2</td><td>$99</td></tr><tr><td>August 30 to September 5</td><td>$1,124</td><td>7</td><td>$161</td><td>$189</td><td>1</td><td>$189</td></tr><tr><td>September 6 to 12</td><td>$1,501</td><td>4</td><td>$375</td><td>$471</td><td>2</td><td>$235</td></tr></tbody>
       </table>
     </div>
-    <script type="application/json" class="viz__data">{"weeks": ["Aug 16", "Aug 23", "Aug 30", "Sep 6"], "ranges": ["August 16 to 22", "August 23 to 29", "August 30 to September 5", "September 6 to 12"], "spend": [1285.755192, 989.967715, 1124.034981, 1500.9545910000002], "forms": [1.0, 4.0, 7.0, 4.0], "cpf": [1272.4806736128705, 248.13907545879653, 160.6909755668684, 375.23864775000004], "target_cpf": null, "broken": [false, false, false, false]}</script>
+    <script type="application/json" class="viz__data">{"weeks": ["Aug 16", "Aug 23", "Aug 30", "Sep 6"], "ranges": ["August 16 to 22", "August 23 to 29", "August 30 to September 5", "September 6 to 12"], "series": [{"name": "Google", "spend": [1285.755192, 989.967715, 1124.034981, 1500.9545910000002], "forms": [1.0, 4.0, 7.0, 4.0], "cpf": [1272.4806736128705, 248.13907545879653, 160.6909755668684, 375.23864775000004]}, {"name": "Microsoft", "spend": [173.04, 197.05, 188.68, 470.7], "forms": [4.0, 2.0, 1.0, 2.0], "cpf": [43.26, 98.525, 188.68, 235.35]}], "target_cpf": null, "broken": [false, false, false, false]}</script>
   </figure>
   <div class="cols">
-    <div class="col"><h3 class="col__title">What we did</h3><ul class="list"><li><span class="item__head">Generic campaign restructured (September 8)</span><ul><li>Six topics, each split into phrase-match and exact-match ad groups.</li><li>Ad-group targets set September 11.</li><li>A second campaign has carried the 14 weaker ad groups since September 4.</li></ul></li><li><span class="item__head">Medical only (September 11)</span><ul><li>23 non-medical keywords paused: polycarbonate, TPU, foam, state names.</li><li>59 off-category negatives and 18 competitor names added.</li><li>“Medical component manufacturers” moved from phrase to exact after $447 for 2 leads.</li></ul></li><li><span class="item__head">Budget plan</span><ul><li>Google $230 a day ($6,900 a month). Microsoft $60 a day ($1,800).</li><li>$8,700 a month together, inside the $40,000 roof for September to December.</li></ul></li><li><span class="item__head">Brand experiment (since September 2)</span><ul><li>Max Clicks against Target Impression Share. Neither has converted.</li><li>Verdict September 23.</li></ul></li></ul></div>
+    <div class="col"><h3 class="col__title">What we did</h3><ul class="list"><li><span class="item__head">Generic campaign restructured (September 8)</span><ul><li>Six topics, each split into phrase-match and exact-match ad groups.</li><li>Ad-group targets set September 11.</li><li>A second campaign has carried the 14 weaker ad groups since September 4.</li></ul></li><li><span class="item__head">Medical only (September 11)</span><ul><li>23 non-medical keywords paused: polycarbonate, TPU, foam, state names.</li><li>59 off-category negatives and 18 competitor names added.</li><li>“Medical component manufacturers” moved from phrase to exact after $447 for 2 leads.</li></ul></li><li><span class="item__head">Budget plan</span><ul><li>Google $230 a day ($6,900 a month). Microsoft $60 a day ($1,800). Microsoft this week: $471, 2 leads at $236.</li><li>$8,700 a month together, inside the $40,000 roof for September to December.</li></ul></li><li><span class="item__head">Brand experiment (since September 2)</span><ul><li>Max Clicks against Target Impression Share. Neither has converted.</li><li>Verdict September 23.</li></ul></li></ul></div>
     <div class="col"><h3 class="col__title">What is next</h3><ul class="list"><li><span class="item__head">Catheter campaign</span><ul><li>Built on the new catheter page once it is live, in one to two weeks.</li><li>Shaped by the keyword list and negative list from the September 10 call.</li></ul></li><li><span class="item__head">Spend table</span><ul><li>September to December, month by month, at the plan and at the roof. For the finance team.</li></ul></li><li><span class="item__head">Restructure verdict</span><ul><li>Two clean weeks from September 11. Verdict about September 25.</li></ul></li><li><span class="item__head">Skai</span><ul><li>Register the second Generic campaign (Eloqua 18421).</li></ul></li><li><span class="item__head">Remarketing</span><ul><li>A remarketing proposal for every Life Sciences brand (Google Display or Meta) goes to the September 17 meeting.</li></ul></li></ul></div>
   </div>
 </section>
@@ -309,7 +319,8 @@ h1 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.0
 <script>
 (function () {
   'use strict';
-  var SERIES = getComputedStyle(document.documentElement).getPropertyValue('--series').trim() || '#2a78d6';
+  var css = getComputedStyle(document.documentElement);
+  var COLORS = [css.getPropertyValue('--series').trim() || '#2a78d6', css.getPropertyValue('--series-2').trim() || '#eb6834'];
   var money0 = function (v) { return '$' + Math.round(v).toLocaleString('en-US'); };
   var fmtForms = function (v) { return Math.abs(v - Math.round(v)) < 0.05 ? String(Math.round(v)) : v.toFixed(1); };
 
@@ -329,6 +340,7 @@ h1 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.0
     return n;
   }
 
+  // values: every number plotted in the panel (all series), used for the y scale
   function frame(plot, data, values, fmt, opts) {
     var W = plot.clientWidth || 400, H = plot.clientHeight || 250;
     var m = { t: 22, r: 14, b: 28, l: 46 };
@@ -336,7 +348,7 @@ h1 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.0
     var vmax = Math.max.apply(null, values.filter(function (v) { return v != null; }).concat(opts.target ? [opts.target] : [0]));
     var nt = niceTicks(vmax * 1.05, 4);
     var y = function (v) { return m.t + ih - (v / nt.max) * ih; };
-    var n = values.length, slot = iw / n;
+    var n = data.weeks.length, slot = iw / n;
     var x = function (i) { return m.l + slot * i + slot / 2; };
     var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, role: 'img', 'aria-label': opts.aria });
     var nb = (data.broken || []).filter(Boolean).length;   // leading weeks where tracking was broken
@@ -374,73 +386,107 @@ h1 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.0
     };
   }
 
+  // one tooltip, every series at that week
   function lines(data, i) {
-    var cpf = data.cpf[i];
-    return ['Spend ' + money0(data.spend[i]), 'Forms ' + fmtForms(data.forms[i]), 'Cost per form ' + (cpf == null ? 'n/a' : money0(cpf))];
+    var out = [];
+    data.series.forEach(function (s) {
+      if (s.spend[i] == null) { out.push(s.name + ': not live'); return; }
+      out.push(s.name + ': ' + money0(s.spend[i]) + ', ' + fmtForms(s.forms[i]) + ' forms, ' + (s.cpf[i] == null ? 'n/a' : money0(s.cpf[i]) + ' per form'));
+    });
+    return out;
+  }
+
+  function allValues(data, key) {
+    var v = [];
+    data.series.forEach(function (s) { s[key].forEach(function (x) { v.push(x); }); });
+    return v;
   }
 
   function renderColumns(plot, data) {
     plot.innerHTML = '';
-    var vals = data.forms, f = frame(plot, data, vals, fmtForms, { aria: 'Form leads per week' });
-    var bw = Math.min(24, f.slot * 0.62), r = Math.min(4, bw / 2), tip = tooltip(plot);
-    var base = f.y(0);
-    vals.forEach(function (v, i) {
-      var cx = f.x(i), top = f.y(v), h = Math.max(0, base - top);
-      var g = el('g', {});
-      var hit = el('rect', { x: cx - f.slot / 2, y: f.m.t, width: f.slot, height: f.ih, 'class': 'hit', tabindex: 0, 'aria-label': data.ranges[i] + ': ' + fmtForms(v) + ' forms' });
-      var d;
-      if (h <= r) d = 'M' + (cx - bw / 2) + ' ' + base + ' h' + bw + ' v' + (-h) + ' h' + (-bw) + ' Z';
-      else d = 'M' + (cx - bw / 2) + ' ' + base + ' v' + (-(h - r)) + ' a' + r + ' ' + r + ' 0 0 1 ' + r + ' ' + (-r) + ' h' + (bw - 2 * r) + ' a' + r + ' ' + r + ' 0 0 1 ' + r + ' ' + r + ' v' + (h - r) + ' Z';
-      var bar = el('path', { d: d, fill: SERIES, 'class': 'bar' });
-      var show = function () { bar.classList.add('is-hot'); tip.show(cx, top, data.ranges[i], lines(data, i)); };
-      var hide = function () { bar.classList.remove('is-hot'); tip.hide(); };
+    var f = frame(plot, data, allValues(data, 'forms'), fmtForms, { aria: 'Form leads per week, Google and Microsoft' });
+    var ns = data.series.length, gap = 2;
+    var bw = Math.min(20, (f.slot * 0.68 - gap * (ns - 1)) / ns), r = Math.min(4, bw / 2), tip = tooltip(plot);
+    var base = f.y(0), groupW = bw * ns + gap * (ns - 1);
+    var bars = [];
+    data.weeks.forEach(function (w, i) {
+      var g = el('g', {}), rowBars = [];
+      data.series.forEach(function (s, k) {
+        var v = s.forms[i];
+        if (v == null) return;
+        var cx = f.x(i) - groupW / 2 + k * (bw + gap) + bw / 2, top = f.y(v), h = Math.max(0, base - top), d;
+        if (h <= r) d = 'M' + (cx - bw / 2) + ' ' + base + ' h' + bw + ' v' + (-h) + ' h' + (-bw) + ' Z';
+        else d = 'M' + (cx - bw / 2) + ' ' + base + ' v' + (-(h - r)) + ' a' + r + ' ' + r + ' 0 0 1 ' + r + ' ' + (-r) + ' h' + (bw - 2 * r) + ' a' + r + ' ' + r + ' 0 0 1 ' + r + ' ' + r + ' v' + (h - r) + ' Z';
+        var bar = el('path', { d: d, fill: COLORS[k], 'class': 'bar' });
+        g.appendChild(bar); rowBars.push(bar);
+      });
+      var topY = Math.min.apply(null, data.series.map(function (s) { return s.forms[i] == null ? base : f.y(s.forms[i]); }));
+      var hit = el('rect', { x: f.x(i) - f.slot / 2, y: f.m.t, width: f.slot, height: f.ih, 'class': 'hit', tabindex: 0, 'aria-label': data.ranges[i] + ': ' + lines(data, i).join('; ') });
+      var show = function () { rowBars.forEach(function (b) { b.classList.add('is-hot'); }); tip.show(f.x(i), topY, data.ranges[i], lines(data, i)); };
+      var hide = function () { rowBars.forEach(function (b) { b.classList.remove('is-hot'); }); tip.hide(); };
       hit.addEventListener('pointerenter', show); hit.addEventListener('pointerleave', hide);
       hit.addEventListener('focus', show); hit.addEventListener('blur', hide);
-      g.appendChild(hit); g.appendChild(bar); f.svg.appendChild(g);
+      g.insertBefore(hit, g.firstChild); f.svg.appendChild(g);
     });
-    var last = vals.length - 1;
-    f.svg.appendChild(el('text', { x: f.x(last), y: f.y(vals[last]) - 7, 'text-anchor': 'middle', 'class': 'lbl' }, fmtForms(vals[last])));
+    // direct label: the last week's value for each series, above its own bar
+    var last = data.weeks.length - 1;
+    data.series.forEach(function (s, k) {
+      var v = s.forms[last];
+      if (v == null) return;
+      var cx = f.x(last) - groupW / 2 + k * (bw + gap) + bw / 2;
+      f.svg.appendChild(el('text', { x: cx, y: f.y(v) - 7, 'text-anchor': 'middle', 'class': 'lbl' }, fmtForms(v)));
+    });
     plot.appendChild(f.svg);
   }
 
   function renderLine(plot, data) {
     plot.innerHTML = '';
-    var vals = data.cpf, f = frame(plot, data, vals, money0, { aria: 'Cost per form per week', target: data.target_cpf });
-    var tip = tooltip(plot), d = '', pen = false;
-    vals.forEach(function (v, i) {
-      if (v == null) { pen = false; return; }
-      d += (pen ? ' L' : ' M') + f.x(i) + ' ' + f.y(v); pen = true;
+    var f = frame(plot, data, allValues(data, 'cpf'), money0, { aria: 'Cost per form per week, Google and Microsoft', target: data.target_cpf });
+    var tip = tooltip(plot), dots = [];
+    data.series.forEach(function (s, k) {
+      var d = '', pen = false;
+      s.cpf.forEach(function (v, i) {
+        if (v == null) { pen = false; return; }
+        d += (pen ? ' L' : ' M') + f.x(i) + ' ' + f.y(v); pen = true;
+      });
+      if (d) f.svg.appendChild(el('path', { d: d.trim(), fill: 'none', stroke: COLORS[k], 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }));
     });
-    f.svg.appendChild(el('path', { d: d.trim(), fill: 'none', stroke: SERIES, 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }));
     var cross = el('line', { x1: 0, x2: 0, y1: f.m.t, y2: f.y(0), stroke: '#9ca3af', 'stroke-width': 1, opacity: 0, 'shape-rendering': 'crispEdges' });
     f.svg.appendChild(cross);
-    var dots = [];
-    vals.forEach(function (v, i) {
-      if (v == null) { dots.push(null); return; }
-      var c = el('circle', { cx: f.x(i), cy: f.y(v), r: 4.5, fill: SERIES, stroke: '#fff', 'stroke-width': 2 });
-      f.svg.appendChild(c); dots.push(c);
+    data.series.forEach(function (s, k) {
+      dots[k] = [];
+      s.cpf.forEach(function (v, i) {
+        if (v == null) { dots[k].push(null); return; }
+        var c = el('circle', { cx: f.x(i), cy: f.y(v), r: 4.5, fill: COLORS[k], stroke: '#fff', 'stroke-width': 2 });
+        f.svg.appendChild(c); dots[k].push(c);
+      });
     });
-    var last = vals.length - 1;
-    if (vals[last] != null) f.svg.appendChild(el('text', { x: f.x(last), y: f.y(vals[last]) - 12, 'text-anchor': 'middle', 'class': 'lbl' }, money0(vals[last])));
+    // direct label at the end of each line; nudge apart if the two ends sit close
+    var last = data.weeks.length - 1, ends = [];
+    data.series.forEach(function (s, k) { if (s.cpf[last] != null) ends.push({ k: k, y: f.y(s.cpf[last]), v: s.cpf[last] }); });
+    ends.sort(function (a, b) { return a.y - b.y; });
+    for (var q = 1; q < ends.length; q++) if (ends[q].y - ends[q - 1].y < 16) ends[q].y = ends[q - 1].y + 16;
+    ends.forEach(function (e) { f.svg.appendChild(el('text', { x: f.x(last), y: e.y - 12, 'text-anchor': 'middle', 'class': 'lbl' }, money0(e.v))); });
     var hot = -1;
     var setHot = function (i) {
-      if (hot >= 0 && dots[hot]) dots[hot].setAttribute('r', 4.5);
+      if (hot >= 0) dots.forEach(function (dk) { if (dk[hot]) dk[hot].setAttribute('r', 4.5); });
       hot = i;
       if (i < 0) { cross.setAttribute('opacity', 0); tip.hide(); return; }
       cross.setAttribute('x1', f.x(i)); cross.setAttribute('x2', f.x(i)); cross.setAttribute('opacity', 1);
-      if (dots[i]) dots[i].setAttribute('r', 6);
-      tip.show(f.x(i), vals[i] == null ? f.m.t + f.ih / 2 : f.y(vals[i]), data.ranges[i], lines(data, i));
+      var ys = [];
+      dots.forEach(function (dk) { if (dk[i]) { dk[i].setAttribute('r', 6); ys.push(+dk[i].getAttribute('cy')); } });
+      tip.show(f.x(i), ys.length ? Math.min.apply(null, ys) : f.m.t + f.ih / 2, data.ranges[i], lines(data, i));
     };
     var hitAll = el('rect', { x: f.m.l, y: f.m.t, width: f.W - f.m.l - f.m.r, height: f.ih, 'class': 'hit' });
     hitAll.addEventListener('pointermove', function (e) {
       var rect = f.svg.getBoundingClientRect(), px = (e.clientX - rect.left) * (f.W / rect.width);
-      var i = Math.max(0, Math.min(vals.length - 1, Math.round((px - f.m.l - f.slot / 2) / f.slot)));
+      var i = Math.max(0, Math.min(data.weeks.length - 1, Math.round((px - f.m.l - f.slot / 2) / f.slot)));
       if (i !== hot) setHot(i);
     });
     hitAll.addEventListener('pointerleave', function () { setHot(-1); });
     f.svg.appendChild(hitAll);
-    vals.forEach(function (v, i) {
-      var k = el('rect', { x: f.x(i) - f.slot / 2, y: f.m.t, width: f.slot, height: f.ih, 'class': 'hit', tabindex: 0, 'aria-label': data.ranges[i] + ': ' + (v == null ? 'no forms' : money0(v) + ' per form') });
+    data.weeks.forEach(function (w, i) {
+      var k = el('rect', { x: f.x(i) - f.slot / 2, y: f.m.t, width: f.slot, height: f.ih, 'class': 'hit', tabindex: 0, 'aria-label': data.ranges[i] + ': ' + lines(data, i).join('; ') });
       k.addEventListener('focus', function () { setHot(i); }); k.addEventListener('blur', function () { setHot(-1); });
       k.style.pointerEvents = 'none';
       f.svg.appendChild(k);
